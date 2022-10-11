@@ -1,8 +1,10 @@
 package org.example;
 
-import org.example.model.Customer;
+import org.example.model.*;
 
-import java.util.Scanner;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     /**
@@ -81,12 +83,36 @@ public class Main {
 
         Customer customer = new Customer();
 
-        System.out.println(customer.getCustomerId());
+        System.out.println(customer.getId());
 
         Customer anotherCustomer = new Customer();
 
-        anotherCustomer.setCustomerId(45);
-        anotherCustomer.setAddress("Athens");
-        System.out.println(anotherCustomer.getCustomerId()+"   "+ anotherCustomer.getAddress());
+        anotherCustomer.setId(45);
+
+        Address address = new Address();
+        address.setCity("Athens");
+        address.setStreet("Alexandras");
+        address.setZip("11521");
+
+        anotherCustomer.setAddress(address);
+        System.out.println(anotherCustomer.getId()+"   "+ anotherCustomer.getAddress());
+
+        Product product = new Product();
+        Product product1 = new Product(23, "chips", new BigDecimal("1.30"));
+
+        System.out.println(product1.toString());
+
+
+        Person person = new Employee();
+
+        Person person1 = new Customer();
+
+        System.out.println(person.getClass().getName());
+
+        List<Employee> employees = new ArrayList<>();
+        List<Customer> customers;
+
+        List<Person> persons;
+
     }
 }
